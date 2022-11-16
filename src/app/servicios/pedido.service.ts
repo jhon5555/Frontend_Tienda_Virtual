@@ -11,7 +11,7 @@ export class PedidoService {
   url=  'http://localhost:3000';
   token: String = '';
   constructor(private http: HttpClient,private seguridadServicio: SeguridadService) {
-     this.token = this.seguridadServicio.ObtenerToken();
+    // this.token = this.seguridadServicio.ObtenerToken();
   }
 
   ObtenerPedidos(): Observable<ModeloPedido[]>{
@@ -21,12 +21,13 @@ export class PedidoService {
     return this.http.get<ModeloPedido>(`${this.url}/pedidos/${id}`);
 
   }
-  CrearPedido(pedido: ModeloPedido): Observable<ModeloPedido>{
+  CrearPedido(pedido: ModeloPedido): Observable<ModeloPedido> {
     return this.http.post<ModeloPedido>(`${this.url}/pedidos`, pedido,{
       headers: new HttpHeaders({
        'Authorization': `Bearer ${this.token}`
       })
     })
+    
   }
   ActualizarPedido(pedido: ModeloPedido): Observable<ModeloPedido> {
     return this.http.put<ModeloPedido>(`${this.url}/pedidos/${pedido.id}`, pedido,{
@@ -38,7 +39,7 @@ export class PedidoService {
   EliminarPedido(id: string): Observable<any> {
     return this.http.delete(`${this.url}/pedidos/${id}`,{
       headers: new HttpHeaders({
-       'Authorizacion': ` Bearer ${this.token}`
+       //'Authorizacion': ` Bearer ${this.token}`
       })
     })
   }

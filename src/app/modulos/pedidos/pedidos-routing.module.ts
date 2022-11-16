@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+  import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscarPedidoComponent } from './buscar-pedido/buscar-pedido.component';
 import { CrearPedidoComponent } from './crear-pedido/crear-pedido.component';
@@ -22,7 +22,7 @@ const routes: Routes = [
     //canActivate: [ValidadorSesionGuard]
   },
   {
-    path : 'eliminar-pedido',
+    path : 'eliminar-pedido/:id',
     component: EliminarPedidoComponent
     //canActivate: [ValidadorSesionGuard]
   }

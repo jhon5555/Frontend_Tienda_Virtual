@@ -1,18 +1,24 @@
 <footer class="page-footer blue-grey">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Quines somos</h5>
-          <p class="grey-text text-lighten-4">Esta es una Plataforma Online dedicada a la venta articulos y productos caninos.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col s6 offset-s3">
+          <h5 class="white-text">Dejanos contactarte y recibe la mejor atencion</h5>
+          <div id="after_submit"></div>
+          <form id="contact_form" action="#" method="POST" action="formulario-contacto.php">
+            <div class="input-field">
+              <label  for="name">Ingresa tu nombre:</label><br />
+              <input id="name"  name="name" type="text" value="" size="30" /><br />
+              <span id="name_validation" class="error_message"></span>
+            </div>
+            <div class="input-field">
+              <label  for="email">Ingresa tu correo:</label><br />
+              <input id="email" name="email" type="text" value="" size="30" /><br />
+              <span id="email_validation" class="error_message"></span>
+            </div>
+           
+              
+              <input id="submit_button" type="submit" value="Send email" />
+          </form>
         </div>
       </div>
     </div>
@@ -23,3 +29,4 @@
       </div>
     </div>
   </footer>
+ 

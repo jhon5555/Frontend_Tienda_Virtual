@@ -20,9 +20,8 @@
   <th>
     Total
   </th>
-  <th>
-    Editar
-  </th>
+  
+  
 </tr>
 </thead>
 <tbody>
@@ -45,8 +44,13 @@
     <td>
       {{p.total}}
     </td>
-    <a routerLink=" /pedidos/editar-pedido/{{p.id}}" class="btn" >Editar pedido</a>
-    <a routerLink=" /pedidos/eliminar-pedido/{{p.id}}" class="btn" >Eliminar pedido</a>
+    
+      <a routerLink="/pedidos/editar-pedido/{{p.id}}" class="btn" >Editar pedido</a>
+    
+    
+      <a routerLink="/pedidos/eliminar-pedido/{{p.id}}" class="btn" >Eliminar pedido</a>
+    
+   
   </tr>
 
 </tbody>

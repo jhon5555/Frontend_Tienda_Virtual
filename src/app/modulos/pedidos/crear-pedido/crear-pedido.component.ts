@@ -30,16 +30,17 @@ export class CrearPedidoComponent implements OnInit {
     let formasPago = this.fgValidador.controls["formasPago"].value;
     let estado = parseInt(this.fgValidador.controls["estado"].value);
     let total = parseInt(this.fgValidador.controls["total"].value);
+    
     let p = new ModeloPedido();
     p.cantidad = cantidad;
-    p.fechaPedido= fechaPedido;
-    p.fechaEntrega = fechaEntrega;
+    p.fechaPedido = new Date(fechaPedido) ;
+    p.fechaEntrega = new Date(fechaEntrega);
     p.formasPago= formasPago;
     p.estado= estado;
     p.total = total;
   this.servicioPedido.CrearPedido(p).subscribe((datos: ModeloPedido)=> {
     alert("Pedido almacenado correctamente")
-    this.router.navigate(["/pedidos/buscar-pedido   "])
+    this.router.navigate(["/pedidos/buscar-pedido"])
   }, (error: any)=> {
     alert("Error almacenando el pedido");
   })                                              
