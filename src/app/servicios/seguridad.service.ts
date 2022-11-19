@@ -69,5 +69,26 @@ ObtenerToken(){
    return '';
   }
 }
+  
+  CambioClave(usuario: string): Observable<ModeloUsuarioClave>{
+  return this.http.post<ModeloUsuarioClave>(`${this.url}/actualizacionClaveBySystem`, {
+    usuario: usuario,
+  
+  },{
+    headers: new HttpHeaders({
+     
+     })
+  })
+}
+CambioClaveUsuario(usuario: string, clave: string): Observable<ModeloUsuarioClave>{
+  return this.http.post<ModeloUsuarioClave>(`${this.url}/actualizacionClaveByUsuario`, {
+    usuario: usuario,
+    clave : clave
+  },{
+    headers: new HttpHeaders({
+     
+     })
+  })
+}
 }
 
